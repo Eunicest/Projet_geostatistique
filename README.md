@@ -1,54 +1,68 @@
-# 🗺️ Analyse Spatiale et Modélisation Géostatistique avec Isatis
-*Spatial Analysis and Geostatistical Modeling using Isatis*
+# 🗺️ Analyse Spatiale et Modélisation Géostatistique (Isatis)
 
-🌍 **[English version below](#english-version)**
+## 🎯 Résultats de la modélisation
+L'analyse structurale de la "Teneur" a permis de calculer un variogramme expérimental omnidirectionnel. L'ajustement a été réalisé avec un modèle sphérique, donnant les paramètres suivants :
+* **Effet de pépite (Nugget) :** 
+* **Palier (Sill) :**  *(Rappel : Variance totale = Pépite + Palier)*
+* **Portée (Range) :** 
 
 ---
 
-## 🇫🇷 Version Française
-
-### 📝 Contexte et Objectif
-Ce projet a été mené afin d'explorer, caractériser et modéliser la distribution tridimensionnelle (X, Y, Z) d'une variable géologique (la "Teneur"). 
-L'objectif principal est de quantifier la continuité et la dépendance spatiale de ces données en utilisant des outils géostatistiques avancés. 
+## 📝 Contexte et Démarche
+Ce projet illustre l'exploration, la caractérisation et la modélisation de la distribution spatiale (X, Y, Z) d'une variable géologique (la "Teneur"). 
 
 La démarche documentée dans ce projet comprend :
-* **L'Analyse Exploratoire des Données (EDA) :** Nettoyage des données, statistiques descriptives et analyse de la distribution (histogrammes, boîtes à moustaches).
-* **La Visualisation Spatiale :** Cartographie 2D (scatter plots) pour identifier visuellement les zones de forte ou faible concentration.
-* **La Géostatistique :** Calcul d'un variogramme expérimental omnidirectionnel.
-* **La Modélisation :** Ajustement (fitting) du variogramme expérimental à l'aide d'un modèle mathématique (modèle sphérique) pour évaluer la variance spatiale et l'effet de pépite.
+* **Analyse Exploratoire (EDA) :** Nettoyage des données, statistiques descriptives et analyse de la distribution.
+* **Visualisation Spatiale :** Cartographie 2D pour identifier visuellement la répartition des teneurs.
+* **Variographie :** Calcul d'un variogramme expérimental omnidirectionnel avec la bibliothèque `isatis`.
+* **Ajustement (Fitting) :** Utilisation d'un modèle sphérique pour quantifier la structure spatiale.
+
+### ⚠️ Limites du projet
+Ce travail se concentre uniquement sur l'analyse de la continuité spatiale (variographie) et s'arrête à la validation du modèle d'ajustement. **L'étape d'estimation et d'interpolation spatiale (Krigeage) n'a pas été réalisée dans le cadre de ce notebook.**
 
 ### 🛠️ Outils et Technologies
-* **Langage & Environnement :** Python, Jupyter Notebook
-* **Domaines d'application :** Géostatistique, Analyse spatiale, Ingénierie des données
-* **Bibliothèques principales :** `isatis` (GeoStats), `pandas`, `numpy`, `matplotlib`, `seaborn`
+* **Domaines :** Géostatistique, Analyse spatiale
+* **Environnement :** Python, Jupyter Notebook
+* **Bibliothèques :** `isatis` (module commercial), `pandas`, `numpy`, `matplotlib`, `seaborn`
 
-### 📂 Contenu du dépôt (`Peojet_geostatistique`)
-* `Projet_Eunice (3).ipynb` : Le notebook Jupyter principal illustrant l'ensemble de la démarche d'analyse de données, les calculs géostatistiques et les visualisations associées.
+### 📂 Contenu du dépôt (`Projet_geostatistique`)
+* 📓 `analyse_geostatistique.ipynb` : Le notebook contenant la démarche d'analyse et les visualisations.
 
-> ⚠️ **Note de traçabilité :** Le jeu de données original (contenant les coordonnées spatiales et les teneurs) n'est pas inclus dans ce dépôt. Ce notebook est partagé en tant que portfolio pour documenter la méthode d'analyse, l'approche algorithmique et la maîtrise de la bibliothèque Isatis.
+> 💡 **Note sur la reproductibilité :** La bibliothèque `isatis` dépendant d'une licence commerciale et le jeu de données géologiques n'étant pas public, le code ne peut pas être relancé tel quel. Le notebook est partagé (avec ses sorties pré-calculées) pour illustrer la méthodologie employée.
 
 ---
 <br>
 
-<a name="english-version"></a>
-## 🇬🇧 English Version
+<details>
+<summary>🇬🇧 <b>English version (Click to expand)</b></summary>
 
-### 📝 Context and Objective
-This project was conducted to explore, characterize, and model the three-dimensional (X, Y, Z) distribution of a geological variable (the "Grade" or "Teneur"). 
-The main objective is to quantify the spatial continuity and dependence of this data using advanced geostatistical tools.
+## 🎯 Modeling Results
+The structural analysis of the "Grade" (Teneur) allowed the computation of an omnidirectional experimental variogram. The fitting was performed using a spherical model, yielding the following parameters:
+* **Nugget effect:** 
+* **Sill:** 
+* **Range:** 
+
+---
+
+## 📝 Context and Workflow
+This project illustrates the exploration, characterization, and modeling of the spatial distribution (X, Y, Z) of a geological variable.
 
 The workflow documented in this project includes:
-* **Exploratory Data Analysis (EDA):** Data cleaning, descriptive statistics, and distribution analysis (histograms, boxplots).
-* **Spatial Visualization:** 2D mapping (scatter plots) to visually identify areas of high or low concentration.
-* **Geostatistics:** Computation of an omnidirectional experimental variogram.
-* **Modeling:** Fitting the experimental variogram using a mathematical model (spherical model) to assess spatial variance and the nugget effect.
+* **Exploratory Data Analysis (EDA):** Data cleaning, descriptive statistics, and distribution analysis.
+* **Spatial Visualization:** 2D mapping to visually identify grade distribution.
+* **Variography:** Computation of an omnidirectional experimental variogram using the `isatis` library.
+* **Fitting:** Using a spherical model to quantify the spatial structure.
+
+### ⚠️ Project Limitations
+This work focuses solely on the analysis of spatial continuity (variography) and stops at the validation of the fitted model. **The spatial estimation and interpolation step (Kriging) was not performed in this notebook.**
 
 ### 🛠️ Tools & Technologies
-* **Language & Environment:** Python, Jupyter Notebook
-* **Application Domains:** Geostatistics, Spatial Analysis, Data Engineering
-* **Core Libraries:** `isatis` (GeoStats), `pandas`, `numpy`, `matplotlib`, `seaborn`
+* **Domains:** Geostatistics, Spatial Analysis
+* **Environment:** Python, Jupyter Notebook
+* **Libraries:** `isatis` (commercial module), `pandas`, `numpy`, `matplotlib`, `seaborn`
 
-### 📂 Repository Content (`Peojet_geostatistique`)
-* `Projet_Eunice (3).ipynb`: The main Jupyter notebook illustrating the entire data analysis workflow, geostatistical calculations, and associated visualizations.
+### 📂 Repository Content (`Projet_geostatistique`)
+* 📓 `analyse_geostatistique.ipynb`: The notebook containing the analysis workflow and visualizations.
 
-> ⚠️ **Traceability Note:** The original dataset (containing spatial coordinates and grades) is not included in this repository. This notebook is shared as a portfolio piece to document the analytical method, algorithmic approach, and proficiency with the Isatis library.
+> 💡 **Reproducibility Note:** Since the `isatis` library requires a commercial license and the geological dataset is not public, the code cannot be re-run as is. The notebook is shared (with pre-computed outputs) to illustrate the methodology used.
+</details>
